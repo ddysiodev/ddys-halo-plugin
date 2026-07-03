@@ -15,7 +15,7 @@ spec:
   configMapName: plugin-ddys-open-configmap
   settingName: plugin-ddys-open-settings
   displayName: "DDYS"
-  description: "Official Halo plugin for the DDYS API."
+  description: "低端影视 API 的官方 Halo 插件。"
   license:
     - name: "GPL-3.0-or-later"
       url: "https://github.com/ddysiodev/ddys-halo-plugin/blob/main/LICENSE"
