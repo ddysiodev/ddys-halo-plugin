@@ -42,14 +42,13 @@ public class DdysHeadProcessor implements TemplateHeadProcessor {
                 values.setProperty("pluginName", pluginContext.getName());
                 values.setProperty("version", pluginContext.getVersion());
                 String tags = """
-                    <!-- DDYS Open start -->
+                    <!-- DDYS start -->
                     <link rel="stylesheet" href="/plugins/${pluginName}/assets/static/frontend.css?version=${version}">
                     <script defer src="/plugins/${pluginName}/assets/static/frontend.js?version=${version}"></script>
-                    <!-- DDYS Open end -->
+                    <!-- DDYS end -->
                     """;
                 model.add(factory.createText(PLACEHOLDER.replacePlaceholders(tags, values)));
             })
             .then();
     }
 }
-

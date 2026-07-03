@@ -5,8 +5,8 @@ metadata:
   labels:
     halo.run/role-template: "true"
   annotations:
-    rbac.authorization.halo.run/module: "DDYS Open"
-    rbac.authorization.halo.run/display-name: "DDYS Open 查看"
+    rbac.authorization.halo.run/module: "DDYS"
+    rbac.authorization.halo.run/display-name: "DDYS 查看"
     rbac.authorization.halo.run/ui-permissions: |
       ["plugin:ddys-open:view"]
 rules:
@@ -21,8 +21,8 @@ metadata:
   labels:
     halo.run/role-template: "true"
   annotations:
-    rbac.authorization.halo.run/module: "DDYS Open"
-    rbac.authorization.halo.run/display-name: "DDYS Open 管理"
+    rbac.authorization.halo.run/module: "DDYS"
+    rbac.authorization.halo.run/display-name: "DDYS 管理"
     rbac.authorization.halo.run/ui-permissions: |
       ["plugin:ddys-open:manage"]
     rbac.authorization.halo.run/dependencies: |

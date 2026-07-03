@@ -14,9 +14,8 @@ spec:
   issues: https://github.com/ddysiodev/ddys-halo-plugin/issues
   configMapName: plugin-ddys-open-configmap
   settingName: plugin-ddys-open-settings
-  displayName: "DDYS Open"
-  description: "Official Halo plugin for the DDYS Open API."
+  displayName: "DDYS"
+  description: "Official Halo plugin for the DDYS API."
   license:
     - name: "GPL-3.0-or-later"
       url: "https://github.com/ddysiodev/ddys-halo-plugin/blob/main/LICENSE"
-

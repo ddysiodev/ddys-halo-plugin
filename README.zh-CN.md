@@ -2,7 +2,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-[低端影视](https://ddys.io/) Open API 的官方 Halo 插件。
+[低端影视](https://ddys.io/) 接口的官方 Halo 插件。
 
 站长安装后，可以在 Halo 文章、页面、主题模板和插件内置页面里直接展示 DDYS 内容。插件包含短代码、主题 Finder、缓存管理、诊断面板、后台 Console 页面，以及可配置 API Base URL，可使用官方 API 或自建 Worker Proxy。
 

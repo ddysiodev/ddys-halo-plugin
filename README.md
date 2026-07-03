@@ -2,7 +2,7 @@
 
 [English](README.md) | [简体中文](README.zh-CN.md)
 
-Official Halo plugin for the [DDYS](https://ddys.io/) Open API.
+Official Halo plugin for the [DDYS](https://ddys.io/) API.
 
 The plugin lets Halo site owners embed DDYS content in posts, pages, templates, and built-in theme pages. It includes shortcodes, theme finders, cache controls, diagnostics, a Console dashboard, and configurable API base URLs for official API or Worker proxy deployments.
 

@@ -13,11 +13,11 @@ export default definePlugin({
         name: 'DDYSOpen',
         component: HomeView,
         meta: {
-          title: 'DDYS Open',
+          title: 'DDYS',
           searchable: true,
           permissions: ['plugin:ddys-open:view'],
           menu: {
-            name: 'DDYS Open',
+            name: 'DDYS',
             group: '内容',
             icon: markRaw(IconPlug),
             priority: 20,
@@ -28,4 +28,3 @@ export default definePlugin({
   ],
   extensionPoints: {},
 })
-

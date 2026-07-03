@@ -141,7 +141,7 @@ onMounted(async () => {
   <main class="ddys-console">
     <header class="ddys-console__header">
       <div>
-        <h1>DDYS Open</h1>
+        <h1>DDYS</h1>
         <p>Halo integration dashboard</p>
       </div>
       <div class="ddys-console__actions">
