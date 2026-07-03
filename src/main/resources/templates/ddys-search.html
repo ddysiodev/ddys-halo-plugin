@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+  <title th:text="${title}">DDYS Search</title>
+</head>
+<body>
+<main class="ddys-open-page">
+  <div th:utext="${searchForm}"></div>
+  <div th:if="${listHtml != null}" th:utext="${listHtml}"></div>
+</main>
+</body>
+</html>
+

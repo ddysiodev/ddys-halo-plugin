@@ -1,0 +1,226 @@
+.ddys-open {
+  --ddys-bg: #ffffff;
+  --ddys-fg: #171717;
+  --ddys-muted: #656d76;
+  --ddys-border: #d8dee4;
+  --ddys-accent: #0f766e;
+  --ddys-soft: #f6f8fa;
+  color: var(--ddys-fg);
+  font: inherit;
+  margin: 1.5rem 0;
+}
+
+.ddys-open--dark {
+  --ddys-bg: #101214;
+  --ddys-fg: #f5f7f8;
+  --ddys-muted: #a9b1ba;
+  --ddys-border: #30363d;
+  --ddys-soft: #161b22;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ddys-open--auto {
+    --ddys-bg: #101214;
+    --ddys-fg: #f5f7f8;
+    --ddys-muted: #a9b1ba;
+    --ddys-border: #30363d;
+    --ddys-soft: #161b22;
+  }
+}
+
+.ddys-open__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ddys-open__header h2,
+.ddys-open h2 {
+  font-size: 1.35rem;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.ddys-open__grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+.ddys-open-layout-list .ddys-open__grid,
+.ddys-open-layout-compact .ddys-open__grid {
+  grid-template-columns: 1fr;
+}
+
+.ddys-open-card {
+  background: var(--ddys-bg);
+  border: 1px solid var(--ddys-border);
+  border-radius: 8px;
+  display: grid;
+  overflow: hidden;
+}
+
+.ddys-open-layout-list .ddys-open-card,
+.ddys-open-layout-compact .ddys-open-card {
+  grid-template-columns: 96px 1fr;
+}
+
+.ddys-open-card__poster {
+  aspect-ratio: 2 / 3;
+  background: var(--ddys-soft);
+  display: block;
+}
+
+.ddys-open-card__poster img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.ddys-open-card__body {
+  padding: 0.85rem;
+}
+
+.ddys-open-card h3 {
+  font-size: 1rem;
+  line-height: 1.35;
+  margin: 0 0 0.45rem;
+}
+
+.ddys-open-card a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.ddys-open-card a:hover {
+  color: var(--ddys-accent);
+  text-decoration: underline;
+}
+
+.ddys-open-card__meta {
+  color: var(--ddys-muted);
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  gap: 0.35rem 0.65rem;
+}
+
+.ddys-open-card__meta span {
+  white-space: nowrap;
+}
+
+.ddys-open-card p,
+.ddys-open-detail p {
+  color: var(--ddys-muted);
+  line-height: 1.65;
+  margin: 0.65rem 0 0;
+}
+
+.ddys-open-detail__hero {
+  background: var(--ddys-bg);
+  border: 1px solid var(--ddys-border);
+  border-radius: 8px;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(120px, 200px) 1fr;
+  padding: 1rem;
+}
+
+.ddys-open-detail__poster {
+  aspect-ratio: 2 / 3;
+  border-radius: 6px;
+  height: auto;
+  object-fit: cover;
+  width: 100%;
+}
+
+.ddys-open-list ul {
+  display: grid;
+  gap: 0.5rem;
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.ddys-open-list li {
+  border-bottom: 1px solid var(--ddys-border);
+  padding: 0.5rem 0;
+}
+
+.ddys-open-search,
+.ddys-open-request-form {
+  align-items: stretch;
+  display: grid;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.ddys-open-search {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.ddys-open input,
+.ddys-open select,
+.ddys-open textarea,
+.ddys-open-search input,
+.ddys-open-request-form input,
+.ddys-open-request-form select,
+.ddys-open-request-form textarea {
+  border: 1px solid var(--ddys-border);
+  border-radius: 6px;
+  box-sizing: border-box;
+  font: inherit;
+  min-height: 2.5rem;
+  padding: 0.5rem 0.65rem;
+  width: 100%;
+}
+
+.ddys-open button,
+.ddys-open-search button,
+.ddys-open-request-form button {
+  background: var(--ddys-accent);
+  border: 0;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  min-height: 2.5rem;
+  padding: 0.5rem 0.9rem;
+}
+
+.ddys-open-request-form label {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.ddys-open__source,
+.ddys-open__empty,
+.ddys-open__error {
+  color: var(--ddys-muted);
+  font-size: 0.9rem;
+  margin-top: 1rem;
+}
+
+.ddys-open__error {
+  border: 1px solid #ef4444;
+  border-radius: 8px;
+  color: #b91c1c;
+  padding: 0.75rem;
+}
+
+@media (max-width: 640px) {
+  .ddys-open__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ddys-open-layout-list .ddys-open__grid,
+  .ddys-open-layout-compact .ddys-open__grid,
+  .ddys-open-detail__hero,
+  .ddys-open-search {
+    grid-template-columns: 1fr;
+  }
+}
+

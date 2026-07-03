@@ -1,0 +1,143 @@
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: plugin-ddys-open-settings
+spec:
+  forms:
+    - group: basic
+      label: 基本设置
+      formSchema:
+        - $formkit: url
+          name: apiBaseUrl
+          label: API Base URL
+          value: "https://ddys.io/api/v1"
+          validation: required|url
+        - $formkit: url
+          name: siteBaseUrl
+          label: DDYS 站点地址
+          value: "https://ddys.io"
+          validation: required|url
+        - $formkit: number
+          name: requestTimeoutSeconds
+          label: 请求超时秒数
+          value: 8
+          validation: required|number|min:1|max:30
+        - $formkit: number
+          name: retryCount
+          label: GET 请求重试次数
+          value: 1
+          validation: required|number|min:0|max:3
+        - $formkit: checkbox
+          name: debug
+          label: 调试模式
+          value: false
+    - group: cache
+      label: 缓存设置
+      formSchema:
+        - $formkit: checkbox
+          name: enabled
+          label: 启用缓存
+          value: true
+        - $formkit: number
+          name: maxEntries
+          label: 最大缓存条目
+          value: 512
+          validation: required|number|min:32|max:5000
+        - $formkit: number
+          name: defaultTtlSeconds
+          label: 默认缓存秒数
+          value: 600
+          validation: required|number|min:0|max:86400
+        - $formkit: number
+          name: realtimeTtlSeconds
+          label: 最新/热门/搜索缓存秒数
+          value: 300
+          validation: required|number|min:0|max:86400
+        - $formkit: number
+          name: detailTtlSeconds
+          label: 详情/资源缓存秒数
+          value: 1800
+          validation: required|number|min:0|max:86400
+        - $formkit: number
+          name: dictionaryTtlSeconds
+          label: 类型/题材/地区缓存秒数
+          value: 86400
+          validation: required|number|min:0|max:604800
+    - group: display
+      label: 展示设置
+      formSchema:
+        - $formkit: text
+          name: pageTitle
+          label: 内置页面标题
+          value: "DDYS"
+          validation: required
+        - $formkit: select
+          name: defaultLayout
+          label: 默认布局
+          value: grid
+          options:
+            - label: 网格
+              value: grid
+            - label: 列表
+              value: list
+            - label: 紧凑
+              value: compact
+        - $formkit: select
+          name: theme
+          label: 主题模式
+          value: auto
+          options:
+            - label: 跟随系统
+              value: auto
+            - label: 浅色
+              value: light
+            - label: 深色
+              value: dark
+        - $formkit: number
+          name: pageSize
+          label: 默认数量
+          value: 12
+          validation: required|number|min:1|max:60
+        - $formkit: checkbox
+          name: showAttribution
+          label: 显示来源链接
+          value: true
+        - $formkit: checkbox
+          name: openInNewTab
+          label: 外链新窗口打开
+          value: true
+    - group: features
+      label: 功能开关
+      formSchema:
+        - $formkit: checkbox
+          name: enableShortcodes
+          label: 启用文章/页面短代码解析
+          value: true
+        - $formkit: checkbox
+          name: enableThemeCss
+          label: 自动注入前台样式
+          value: true
+        - $formkit: checkbox
+          name: enablePages
+          label: 启用内置前台页面
+          value: true
+        - $formkit: checkbox
+          name: enablePublicApi
+          label: 启用插件公开查询 API
+          value: true
+        - $formkit: checkbox
+          name: enableRequestForm
+          label: 启用求片表单
+          value: false
+    - group: auth
+      label: 认证功能
+      formSchema:
+        - $formkit: password
+          name: apiKey
+          label: DDYS API Key
+          help: 仅服务端使用，用于管理员确认开启的认证功能。
+        - $formkit: checkbox
+          name: allowAuthenticatedWrites
+          label: 允许插件服务端执行认证写入
+          value: false
+

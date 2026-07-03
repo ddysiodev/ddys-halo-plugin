@@ -1,0 +1,20 @@
+apiVersion: plugin.halo.run/v1alpha1
+kind: ExtensionDefinition
+metadata:
+  name: ddys-open-post-shortcode-handler
+spec:
+  className: io.ddys.halo.ddysopen.content.DdysPostContentHandler
+  extensionPointName: reactive-post-content-handler
+  displayName: "DDYS post shortcode handler"
+  description: "Render DDYS shortcodes in post content."
+---
+apiVersion: plugin.halo.run/v1alpha1
+kind: ExtensionDefinition
+metadata:
+  name: ddys-open-page-shortcode-handler
+spec:
+  className: io.ddys.halo.ddysopen.content.DdysSinglePageContentHandler
+  extensionPointName: reactive-singlepage-content-handler
+  displayName: "DDYS page shortcode handler"
+  description: "Render DDYS shortcodes in single page content."
+

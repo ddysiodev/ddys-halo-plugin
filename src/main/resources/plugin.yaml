@@ -1,0 +1,22 @@
+apiVersion: plugin.halo.run/v1alpha1
+kind: Plugin
+metadata:
+  name: PluginDdysOpen
+spec:
+  enabled: true
+  requires: ">=2.23.0"
+  author:
+    name: DDYS
+    website: https://ddys.io
+  logo: logo.png
+  homepage: https://github.com/ddysiodev/ddys-halo-plugin#readme
+  repo: https://github.com/ddysiodev/ddys-halo-plugin
+  issues: https://github.com/ddysiodev/ddys-halo-plugin/issues
+  configMapName: plugin-ddys-open-configmap
+  settingName: plugin-ddys-open-settings
+  displayName: "DDYS Open"
+  description: "Official Halo plugin for the DDYS Open API."
+  license:
+    - name: "GPL-3.0-or-later"
+      url: "https://github.com/ddysiodev/ddys-halo-plugin/blob/main/LICENSE"
+

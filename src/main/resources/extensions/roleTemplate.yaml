@@ -1,0 +1,54 @@
+apiVersion: v1alpha1
+kind: Role
+metadata:
+  name: role-template-ddys-open-view
+  labels:
+    halo.run/role-template: "true"
+  annotations:
+    rbac.authorization.halo.run/module: "DDYS Open"
+    rbac.authorization.halo.run/display-name: "DDYS Open 查看"
+    rbac.authorization.halo.run/ui-permissions: |
+      ["plugin:ddys-open:view"]
+rules:
+  - apiGroups: [ "console.api.ddys.io" ]
+    resources: [ "ddys/status", "ddys/diagnostics", "ddys/preview", "ddys/shortcodes", "ddys/test", "ddys/me" ]
+    verbs: [ "get" ]
+---
+apiVersion: v1alpha1
+kind: Role
+metadata:
+  name: role-template-ddys-open-manage
+  labels:
+    halo.run/role-template: "true"
+  annotations:
+    rbac.authorization.halo.run/module: "DDYS Open"
+    rbac.authorization.halo.run/display-name: "DDYS Open 管理"
+    rbac.authorization.halo.run/ui-permissions: |
+      ["plugin:ddys-open:manage"]
+    rbac.authorization.halo.run/dependencies: |
+      ["role-template-ddys-open-view"]
+rules:
+  - apiGroups: [ "console.api.ddys.io" ]
+    resources: [ "ddys/cache/flush", "ddys/cache/prune", "ddys/comments", "ddys/report", "ddys/follow" ]
+    verbs: [ "create" ]
+  - apiGroups: [ "console.api.ddys.io" ]
+    resources: [ "ddys/comments" ]
+    verbs: [ "delete" ]
+  - nonResourceURLs: [ "/apis/console.api.ddys.io/v1alpha1/ddys/request" ]
+    verbs: [ "get" ]
+---
+apiVersion: v1alpha1
+kind: Role
+metadata:
+  name: role-template-ddys-open-anonymous
+  labels:
+    halo.run/role-template: "true"
+    halo.run/hidden: "true"
+    rbac.authorization.halo.run/aggregate-to-anonymous: "true"
+rules:
+  - apiGroups: [ "api.ddys.io" ]
+    resources: [ "ddys", "ddys/*" ]
+    verbs: [ "get", "list" ]
+  - apiGroups: [ "api.ddys.io" ]
+    resources: [ "ddys/requests" ]
+    verbs: [ "create" ]
